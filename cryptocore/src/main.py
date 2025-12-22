@@ -9,13 +9,13 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 try:
     # Старые импорты
-from .crypto import (
-    encrypt_ecb, decrypt_ecb,
-    encrypt_cbc, decrypt_cbc,
-    encrypt_cfb, decrypt_cfb,
-    encrypt_ofb, decrypt_ofb,
-    encrypt_ctr, decrypt_ctr
-)
+    from crypto import (
+        encrypt_ecb, decrypt_ecb,
+        encrypt_cbc, decrypt_cbc,
+        encrypt_cfb, decrypt_cfb,
+        encrypt_ofb, decrypt_ofb,
+        encrypt_ctr, decrypt_ctr
+    )
     from src.file_io import read_file, write_file
     from src.csprng import generate_random_bytes
     from src.hash.sha256 import SHA256
@@ -539,3 +539,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
