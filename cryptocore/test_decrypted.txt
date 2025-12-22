@@ -1,0 +1,1 @@
+"Hello CryptoCore! This is test data for AES-128 ECB mode." 
