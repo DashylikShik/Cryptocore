@@ -31,6 +31,8 @@ git clone https://github.com/Dashylikjopka/Cryptocore.git
 cd cryptocore
 
 # Установка зависимостей
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 
 cryptocore/
@@ -264,3 +266,4 @@ python tests\sprint8_tests.py
 - Файл CONTRIBUTING.md для контрибьюторов (QA-4)
 - Файл SECURITY.md с политикой безопасности (QA-5)
 - Чек-лист безопасности в документации (QA-6)
+
