@@ -1,27 +1,25 @@
-# Security Policy
+Политика безопасности CryptoCore
+Сообщение об уязвимостях
 
-## Reporting a Vulnerability
+ Не создавайте публичные issue
+Отправляйте отчёт на email безопасности
 
-If you discover a security vulnerability in CryptoCore, please report it responsibly:
+Сроки реакции
 
-**DO NOT** create a public GitHub issue for security vulnerabilities.
+Подтверждение: до 48 часов
 
-Instead, please email: [INSERT SECURITY EMAIL HERE]
+Анализ: 3–5 дней
 
-## Response Timeline
+Публикация — после фикса
 
-- Acknowledgment: Within 48 hours
-- Investigation: 3-5 business days
-- Fix development: Depends on severity
-- Public disclosure: After fix is available
+Поддерживаемые версии
 
-## Supported Versions
+Поддерживается только последняя major-версия
 
-Only the latest major version receives security updates.
+Лучшие практики
 
-## Security Best Practices
+Используйте GCM
 
-- Always use the latest version
-- Use strong, randomly generated keys
-- Prefer authenticated encryption modes (GCM)
-- Never reuse IVs/nonces
+Не переиспользуйте IV
+
+Генерируйте сильные ключи
