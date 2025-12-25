@@ -1,8 +1,7 @@
-
 ```markdown
 # CryptoCore Development Guide
 
-## Project Structure
+## Структура проекта
 cryptocore/
 ├── src/ # Source code
 │ ├── hash/ # Hash functions (SHA-256, SHA3-256)
@@ -24,12 +23,12 @@ text
 
 ## Development Setup
 
-### 1. Clone and Install
+### 1. Настройка окружения
 ```bash
 git clone https://github.com/Dashylikjopka/Cryptocore.git
 cd cryptocore
 pip install -r requirements.txt
-2. Run Tests
+2. Запуск тестов
 bash
 # Run all tests
 python tests/run_tests.py
@@ -40,70 +39,47 @@ python -m pytest tests/unit/test_hash.py -v
 # Check test coverage
 pip install pytest-cov
 pytest --cov=src --cov-report=html
-3. Code Style
-Follow PEP 8
+3. Стиль кода
+PEP 8
+Говорящие имена
+Docstring для публичных функций
+Юнит-тесты
 
-Use meaningful variable names
+Добавление новых функций
+1. Новый хеш-алгоритм
+Создать файл
+Реализовать update() и digest()
+Добавить в CLI
+Написать тесты
+Обновить документацию
 
-Add docstrings to all public functions
+2. Новый режим шифрования
+Реализовать encrypt() и decrypt()
+Тестировать с OpenSSL
 
-Write unit tests for new functionality
-
-Adding New Features
-1. New Hash Algorithm
-Create src/hash/new_hash.py
-
-Implement the hash class with update() and digest() methods
-
-Add to CLI in src/main.py
-
-Write tests in tests/unit/test_new_hash.py
-
-Update documentation
-
-2. New Encryption Mode
-Create src/modes/new_mode.py
-
-Implement encrypt() and decrypt() functions
-
-Add to mode selection in src/main.py
-
-Write interoperability tests with OpenSSL
-
-Update user guide
-
+Обновить руководство пользователя
 Testing Strategy
-Unit Tests
-Test individual functions
+Стратегия тестирования
+Юнит-тесты
+Тестировать отдельные функции
+Использовать известные тестовые векторы (NIST, RFC)
+Тестировать крайние случаи (пустые файлы, большие файлы)
 
-Use known test vectors (NIST, RFC)
+Интеграционные тесты
+Тестировать команды CLI полностью
+Тестировать операции ввода/вывода файлов
+Тестировать совместимость с OpenSSL
 
-Test edge cases (empty files, large files)
+Тесты безопасности
+Тестировать генерацию случайных чисел
+Тестировать уникальность ключей/IV
+Тестировать сбои аутентификации
 
-Integration Tests
-Test CLI commands end-to-end
 
-Test file I/O operations
-
-Test interoperability with OpenSSL
-
-Security Tests
-Test random number generation
-
-Test key/IV uniqueness
-
-Test authentication failures
-
-Dependencies
-pycryptodome>=3.19.0 - For AES primitives
+Зависимости
+pycryptodome>=3.19.0 - для примитивов AES
 
 Python 3.7+
 
-Versioning
-Use semantic versioning: MAJOR.MINOR.PATCH
-
-MAJOR: Breaking changes
-
-MINOR: New features, backwards compatible
-
-PATCH: Bug fixes
+Версионирование
+Использовать семантическое версионирование: MAJOR.MINOR.PATCH
