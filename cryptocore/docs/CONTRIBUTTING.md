@@ -1,30 +1,22 @@
-# Contributing to CryptoCore
+Вклад в CryptoCore
 
-Thank you for considering contributing to CryptoCore!
+Спасибо за интерес к проекту CryptoCore!
 
-## How to Contribute
+Как внести вклад:
+Сделайте fork репозитория
+Создайте отдельную ветку
+Внесите изменения
+Запустите тесты
+Создайте pull request
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests to ensure everything works
-5. Submit a pull request
+Руководство по разработке:
+Следуйте стилю кода
+Пишите тесты
+Обновляйте документацию
+Сохраняйте обратную совместимость
 
-## Development Guidelines
-
-- Follow the existing code style
-- Write tests for new functionality
-- Update documentation as needed
-- Ensure backward compatibility
-
-## Testing Requirements
-
-All contributions must pass:
-- Unit tests
-- Integration tests
-- Interoperability tests with OpenSSL
-- Memory safety tests (for C implementation)
-
-## Code Review Process
-
-All pull requests will be reviewed by maintainers. Feedback will be provided within 3-5 business days.
+Требования к тестированию:
+Unit-тесты
+Интеграционные тесты
+Совместимость с OpenSSL
+Тесты безопасности памяти (для C-реализации)
