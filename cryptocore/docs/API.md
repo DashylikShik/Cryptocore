@@ -1,75 +1,35 @@
-markdown
-# CryptoCore API Documentation
+Документация API CryptoCore
+Обзор
 
-## Overview
-CryptoCore provides cryptographic functions for encryption, hashing, and key derivation.
+CryptoCore предоставляет криптографические функции для шифрования, хеширования и генерации ключей.
 
-## Modules
-
-### `src.aes` - AES Encryption
-```python
+Модули
+src.aes — Шифрование AES
 from src.aes import encrypt_block, decrypt_block
-
 # encrypt_block(key: bytes, plaintext: bytes) -> bytes
 # decrypt_block(key: bytes, ciphertext: bytes) -> bytes
 
-src.modes - Encryption Modes
-
+src.modes — Режимы шифрования
 from src.modes import ecb, cbc, cfb, ofb, ctr, gcm
+Каждый режим предоставляет:
+encrypt(key, data, iv=None) -> bytes
+decrypt(key, data, iv=None) -> bytes
 
-# Each mode provides:
-# - encrypt(key, data, iv=None) -> bytes
-# - decrypt(key, data, iv=None) -> bytes
-
-
-src.hash - Hash Functions
-
+src.hash — Хеш-функции
 from src.hash.sha256 import SHA256
 from src.hash.sha3_256 import SHA3_256
 
-sha256 = SHA256()
-hash_value = sha256.hash(b"data")
-src.mac - Message Authentication
-
+src.mac — Аутентификация сообщений
 from src.mac.hmac import HMAC
 
-hmac = HMAC(key=b"secret")
-mac = hmac.compute(b"message")
-src.kdf - Key Derivation
-
+src.kdf — Генерация ключей
 from src.kdf.pbkdf2 import pbkdf2_hmac_sha256
 
-key = pbkdf2_hmac_sha256(
-    password=b"password",
-    salt=b"salt",
-    iterations=100000,
-    dklen=32
-)
-
-
-src.csprng - Random Number Generation
-
+src.csprng — Криптографический ГСЧ
 from src.csprng import generate_random_bytes
 
-random_data = generate_random_bytes(16)
-Usage Examples
-Basic AES Encryption
-python
+Пример использования
+Базовое AES-шифрование
 from src.modes.cbc import encrypt, decrypt
-
-key = b"0" * 16
-iv = generate_random_bytes(16)
-ciphertext = encrypt(key, b"secret message", iv)
-plaintext = decrypt(key, ciphertext, iv)
-Hashing Files
-python
-from src.hash.sha256 import SHA256
-
-sha256 = SHA256()
-with open("file.txt", "rb") as f:
-    while chunk := f.read(4096):
-        sha256.update(chunk)
-hash_result = sha256.digest()
-text
-
-
+Хеширование файлов
+(пример потокового чтения)
